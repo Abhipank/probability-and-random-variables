@@ -11,7 +11,7 @@ for coordinate in coordinates:
 
 x= np.linspace(-6, 6, 100)
 
-plt.plot(X,Y, label='$f(x)=2x^2+1')
+plt.plot(X,Y, label='$f(x)=x^3')
 
 plt.axvline(x=0,c="black",linestyle='--',label="x-axis")
 plt.axhline(y=0,c="black",linestyle='--',label="y-axis")
