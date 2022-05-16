@@ -1,0 +1,73 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\title{Assignment 5}
+
+\author{Abhishek Kumar}
+
+\institute{IIT Hyderabad}
+
+\date{16May,2022}
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	\begin{frame}{Outline}
+		\tableofcontents
+	\end{frame}
+	\section{Question}
+	\begin{frame}{Question Statement}
+		
+		\textbf{}Suppose that the reliability of HIV test is specified as follows:\\
+		Of people having HIV, $90$\% of the test detect the disease but 10\% go undetected.Of people free of HIV,$99$\% of the test are judged HIV $-$ve but $1$\% are diagnosed as showing HIV $+$ve.From a large population of which only $0.1$\% have HIV,one person is selected at random,given the HIV test and pathologist reports him/her as HIV $+$ve.What is the probability that the person actually has HIV ?\\
+	\end{frame}
+	\section{Solution}
+	\begin{frame}{Solution}
+		\textbf{}
+		Let $E$ be the event that the person selected is actually having HIV and $A$ be the event that the person's HIV test is diagnosed as $+$ve.We need to find $P(E|A)$ i.e. probability that person is actually having HIV provided he has been diagnose as HIV $+$ve
+		\begin{block}{Table}
+			\begin{tabular}{|c||l|}
+				\hline
+				Events & X(random variable)  \\ 
+				\hline
+				$E$ & $1$ \\ 
+				\hline
+				$E'$ & $0$ \\ 
+				\hline
+				$A$ & $1$ \\ 
+				\hline
+				$A'$ & $0$ \\ 
+				\hline
+			\end{tabular}
+			
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		Also    $E'$ denotes the event that person selected is actually not having HIV.
+		\begin{align}
+			&P_E(1)=0.1\%=0.1/100=0.001\\
+			&P_E(0)=1-P_E(1)=1-0.001=0.999\\
+			&P_A(1)=P_E(1)P_A_|_E(1|1)+P_E(1)P_A_|_E(1|0)\\
+			&P_A_|_E(1|1)=1\%=0.9\\
+			&P_A_|_E(1|0)=90\%=0.01
+		\end{align}
+		\begin{alertblock}{Approach}
+			Using Bayes Theorem
+		\end{alertblock}
+		
+		\begin{align}
+			&P_E_|_A(1|1)=P_E_A(1 \cap 1)/P_A(1)=\\\nonumber
+			&P_E(1)P_A_|_E(1|1)/(P_E(1)P_A_|_E(1|1)+P_E(0)P_A_|_E(1|0)) \\
+			&\Rightarrow P_E_|_A(1|1)=0.001\times0.9/(0.001\times0.9+0.999\times0.01)\\
+			&\Rightarrow P_E_|_A(1|1)=0.083 
+		\end{align}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{alertblock}{Answer}
+			Probability that the person which was reported as HIV $+$ve is actually having the disease$=0.083$
+		\end{alertblock}
+	\end{frame}
+	
+\end{document}
