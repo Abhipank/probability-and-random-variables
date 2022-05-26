@@ -1,0 +1,103 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\title{Assignment 8}
+
+\author{Abhishek Kumar}
+
+\institute{IIT Hyderabad}
+
+\date{24May,2022}
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	\begin{frame}{Outline}
+		\tableofcontents
+	\end{frame}
+	\section{Question}
+	\begin{frame}{Question Statement}
+		
+		\textbf{Question:}Let $X$ represent a binomial random variable with parameters n and p.Show that and Compute
+		\begin{enumerate}[(a)]
+			\item $E[X]=np$
+			\item $E[X(X-1)]=n(n-1)p^{2}$
+			\item $E[X(X-1)(X-2)]=n(n-1)(n-2)p^{3}$
+			\item $E[X^{2}]$
+			\item $E[X^{3}]$
+		\end{enumerate}
+	\end{frame}
+	\section{Solution}
+	\begin{frame}{Solution}
+		\textbf{Solution:}
+		Let $P(X)$ be probability of random Variable X and r denotes all values that X can take.
+		
+		\begin{align}
+			&E[X]=\sum X\times P(X=r)\\
+			&\Rightarrow E[X]=\sum r \times \binom{n}{r} \times p^{r} \times (1-p)^{n-r}\\
+		\end{align}
+		Using Binomial coefficients property:\\
+		\begin{align}
+			&\binom{n}{r}=n/r \times \binom{n-1}{r-1}\\
+			&\Rightarrow E[X]=\sum r \times n/r \times \binom{n-1}{r-1} \times p^{r} \times (1-p)^{n-r}
+		\end{align}
+		
+	\end{frame}
+	\begin{frame}
+		\begin{align}
+			&\Rightarrow E[X]=np\sum \binom{n-1}{r-1} \times p^{r-1} \times (1-p)^{((n-1)-(r-1))}\\
+			&\Rightarrow E[X]=np(p+1-p)^{n-1}\\
+			&\Rightarrow E[X]=np
+		\end{align}
+		\begin{align}
+			&E[X(X-1)]=\sum X(X-1)\times P(X=r)\\
+		\end{align}
+		\begin{align}
+			&\Rightarrow E[X(X-1)]=\sum r(r-1)\times \binom{n}{r} \times p^{r} \times (1-p)^{n-r}
+		\end{align}
+		
+		
+	\end{frame}
+	\begin{frame}
+		Using Binomial coefficients property:\\
+		\begin{align}
+			&\binom{n}{r}=n/r \times (n-1)/(r-1) \times \binom{n-1}{r-1}\\
+			&\Rightarrow E[X(X-1)]=\sum r(r-1) \times n(n-1)/r(r-1) \times \binom{n-1}{r-1}p^{r}(1-p)^{n-r}
+		\end{align}
+		\begin{align}
+			&\Rightarrow E[X(X-1)]=n(n-1)p^{2}\sum \binom{n-2}{r-2} \times p^{r-2} \times (1-p)^{((n-2)-(r-2))}\\
+			&\Rightarrow E[X(X-1)]=n(n-1)p^{2}(p+1-p)^{n-2}\\
+			&\Rightarrow E[X(X-1)]=n(n-1)p^{2}
+		\end{align}
+	\end{frame}
+	\begin{frame}
+		\begin{align}
+			&E[X(X-1)(X-2)]=\sum X(X-1)(X-2)\times P(X=r)\\
+			&\Rightarrow E[X(X-1)(X-2)]=\sum r(r-1)(r-2) \times \binom{n}{r} \times p^{r} \times (1-p)^{n-r}
+		\end{align}
+		
+		Using Binomial coefficients property:\\
+		\begin{align}
+			&\binom{n}{r}=n(n-1)(n-2)/(r)(r-1)(r-2)\times \binom{n-3}{r-3}\\
+			&\Rightarrow E[X(X-1)(X-2)]=n(n-1)(n-2)p^{3}\sum\binom{n-3}{r-3}p^{r-3}(1-p)^{(n-r)}\\
+			&\Rightarrow E[X(X-1)(X-2)]=n(n-1)(n-2)p^{3}
+		\end{align}
+	\end{frame}
+	\begin{frame}
+		From equation 16
+		\begin{align}
+			&E[X(X-1)]=n(n-1)p^{2}\\
+			&\Rightarrow E[X^{2}]-E(X)=n(n-1)p^{2}\\
+			&\Rightarrow E[X^{2}]=n(n-1)p^{2}+np
+		\end{align}
+		From equation 21
+		\begin{align}
+			&E[X(X-1)(X-2)]=n(n-1)(n-2)p^{3}\\
+			&\Rightarrow E[X^{3}]-3\times E[X^{2}]+2 \times E[X]=n(n-1)p^{2}\\
+			&\Rightarrow E[X^{3}]=n(n-1)(n-2)p^{3}+3n(n-1)p^{2}+np
+		\end{align}
+	\end{frame}
+	
+	
+	
+\end{document}
