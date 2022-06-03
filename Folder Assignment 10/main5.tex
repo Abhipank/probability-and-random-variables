@@ -1,0 +1,60 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\title{Assignment 10}
+\graphicspath{{images/}}
+\author{Abhishek Kumar}
+
+\institute{IIT Hyderabad}
+
+\date{1 May,2022}
+\newcommand{\Int}{\int\limits}
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	\begin{frame}{Outline}
+		\tableofcontents
+	\end{frame}
+	\section{Question}
+	\begin{frame}{Question Statement}
+		
+		\textbf{Question:} The random variables ${X_k}$ are independent with densities $f_k(x)$ and the random variable variable $n$ is independent of $X_k$ with $P(n=k)=p_k$.Show that
+		\begin{align}
+			s=\sum X_k   \Rightarrow   F_s(s)=\sum p_k[f_1(s) \times f_2(s) ...... \times f_n(s)]
+		\end{align}
+	\end{frame}
+	\section{Solution}
+	\begin{frame}{Solution}
+		\textbf{Solution:}
+		f denotes p.d.f. and F denotes c.d.f.
+		\begin{alertblock}{Approach}
+			we will use the concept of conditional probability and extension of bayes theorem in probability density distribution
+		\end{alertblock}
+		We shall first determine the conditional probability
+		\begin{align}
+			F_s(s|n=n)=P(s \leq s,n=n)/P(n=n)
+		\end{align}
+		The event $(s \leq s,n=n)$ consists of all outcomes such that n=n and $\sum X_k \leq s$.since the RV n is independent of RVs $X_k$,this yields 
+	\end{frame}
+	\begin{frame}
+		\begin{align}
+			F_s(s)=P(\sum X_k \leq s)P(n=n)/p(n=n)=P(\sum X_k)
+		\end{align}
+		From the independence of RVs $X_k$,it follows that 
+		\begin{align}
+			F_s(s|n=n)=f_1(s) \times f_2(s) \times f_3(s) ...... \times f_n(s)
+		\end{align}
+		Extending the concept of bayes theorem in probability density distribution concept,we get
+		\begin{align}
+			F(x)=F(x|A_1)P(A_1)+....+F(x|A_n)P(A_n)
+		\end{align}
+		setting $A_k=(n=k)$ in equation(5) ,we obtain
+		\begin{align}
+			&F_s(s)=\sum P(X_k)[f_1(s) \times f_2(s) ...... \times f_n(s)]\\
+			&\Rightarrow F_s(s)=\sum P(X_k)[f_1(s) \times f_2(s) ..... \times f_n(s)]
+		\end{align}
+		Hence Proved
+	\end{frame}
+	
+\end{document}
