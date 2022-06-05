@@ -1,0 +1,61 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\title{Assignment 11}
+\graphicspath{{images/}}
+\author{Abhishek Kumar}
+\usepackage{enumerate}
+\institute{IIT Hyderabad}
+
+\date{3 May,2022}
+
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	\begin{frame}{Outline}
+		\tableofcontents
+	\end{frame}
+	\section{Question}
+	\begin{frame}{Question Statement}
+		
+		\textbf{Question:} From past records ,it is known that the life length of tyres of type A is a random variable $X$  with standard deviation $\sigma=5000$ miles  and .We test  64 samples and find their average life length $\overline X=25000$ miles.Find the 0.9 confidence interval of the mean.
+	\end{frame}
+	\section{Solution}
+	\begin{frame}{Solution}
+		\textbf{Solution:}
+		
+		\begin{alertblock}{Approach}
+			Two things affect the width of any confidence interval :
+			\begin{enumerate}
+				\item Variation in the population
+				\item Sample size
+			\end{enumerate}
+		\end{alertblock}
+		Central limit theorem underpins following:\\
+		Confidence interval$=$
+		\begin{align}
+			\overline X \pm t \times \sigma/ \sqrt{n}
+		\end{align}
+		where $t=$test statistic,$n=$sample size
+	\end{frame}
+	\begin{frame}
+		t-value is calculated from sample data during Hypothesis tests and confidence level.From a standard chart ,t-value=1.6448. 
+		\begin{align}
+			&\sigma =5000\\
+			&\overline X=25000\\
+			&n=64\\
+			&confidence=90\%
+		\end{align}
+		Plugging the values in the equation(1),we get:\\
+		Confidence interval$=$
+		\begin{align}
+			&25000 \pm 1028\nonumber\\
+			&\Rightarrow [23972,26028]\nonumber
+		\end{align}
+		\begin{alertblock}{Result}
+			We can say with 90\% confidence that most values for tyre life lies between $[23972,26028]$ miles.
+		\end{alertblock}
+	\end{frame}
+	
+\end{document}
