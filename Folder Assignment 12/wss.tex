@@ -1,0 +1,61 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\title{Assignment 12}
+\graphicspath{{images/}}
+\author{Abhishek Kumar}
+\usepackage{enumerate}
+\institute{IIT Hyderabad}
+
+\date{11 May,2022}
+\newcommand{\Int}{\int\limits}
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	\begin{frame}{Outline}
+		\tableofcontents
+	\end{frame}
+	\section{Question}
+	\begin{frame}{Question Statement}
+		
+		\textbf{Question:} Given a WSS process x(t),we form the sum $\hat{x}(t)=\sum c_ne^{-jnw_0t}$.Show that $E[|x(t)-\hat{x}(t)|^{2}]=0$
+		for $0<t<T$.
+	\end{frame}
+	\section{Solution}
+	\begin{frame}{Solution}
+		\textbf{Solution:}
+		
+		\begin{align}
+			\hat{x}(t)=\sum c_ne^{-jnw_0t} ,c_n=1/T \times \Int_{t=0}^{t=T}x(t)e^{-jnw_0t}
+		\end{align}
+		
+		\begin{align}
+			&E[|x(t)-\hat{x}(t)|^{2}]\\
+			&\Rightarrow E[(x(t)-\hat{x}(t)(\overline{x}(t)-\overline{\hat{x}}(t)]\\
+			&\Rightarrow E[|x(t)|^{2}]+E[\hat{|x}(t)|^{2}]-E[\hat{x}(t)\overline{x}(t)]-E[{x}(t)\overline{\hat{x}}(t)]
+		\end{align}
+		
+	\end{frame}
+	\begin{frame}
+		From equation(1)
+		\begin{align}
+			&E[x(t)]=E[\hat{x}(t)]\\
+			\Rightarrow  &E[|x(t)|^{2}]=E[\hat{|x}(t)|^{2}]=c_n^{2}\\
+			&E[\hat{x}(t)\overline{x}(t)]=E[{x}(t)\overline{\hat{x}}(t)]=E[|x(t)|^{2}]=c_n^{2}
+		\end{align}
+		Plugging the values in the equation(4),we get:\\
+		
+		\begin{align}
+			&E[|x(t)-\hat{x}(t)|^{2}]\\
+			&\Rightarrow E[(x(t)-\hat{x}(t)(\overline{x}(t)-\overline{\hat{x}}(t)]\\
+			&\Rightarrow E[|x(t)|^{2}]+E[\hat{|x}(t)|^{2}]-E[\hat{x}(t)\overline{x}(t)]-E[{x}(t)\overline{\hat{x}}(t)]\\
+			&\Rightarrow c_n^{2}+c_n{2} -c_n^{2}-c_n^{2}=0
+		\end{align}
+		\begin{alertblock}{Result}
+			$E[|x(t)-\hat{x}(t)|^{2}]=0$ \\
+			Hence Proved.
+		\end{alertblock}
+	\end{frame}
+	
+\end{document}
