@@ -1,0 +1,48 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\title{Assignment 13}
+\graphicspath{{images/}}
+\author{Abhishek Kumar}
+\usepackage{enumerate}
+\institute{IIT Hyderabad}
+
+\date{18 May,2022}
+
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	\begin{frame}{Outline}
+		\tableofcontents
+	\end{frame}
+	\section{Question}
+	\begin{frame}{Question Statement}
+		
+		\textbf{Question:} if a state $e_j$ is accessible from a persistent state $e_i$,then $e_i$ is also accessible from $e_j$ and moreover $e_j$ is persistent.
+	\end{frame}
+	\section{Solution}
+	\begin{frame}{Solution}
+		\textbf{Solution:}
+		suppose a state $e_j$ is accessible from a persistent  state $e_i$,but $e_i$ is not accessible from $e_j$.Thus system goes from $e_i$ to $e_j$ in a certain number of steps with positive probability $p_i_j^{m}=a$ and after that it does not return to $e_i$.consequently starting from  $e_i$ the probability of the system not returning to $e_i$ is at least a or the probability of the system eventually returning to $e_i$ cannot exceed $1-a$.Thus $f_1_1 \le 1-a$  .But $1-a$ is strictly less than 1,contradicting the assumption that $e_i$ is persistent .Hence $e_i$ must be accessible from $e_j$,that is,$p_j_i^{r}=b>0$ for some r.\\\\
+		
+		from above ,we have 
+		
+		\begin{align}
+			&p_i_j^{n+m} \ge p_i_k^{m}p_k_j^{n} \\
+			&\Rightarrow p_i_j^{n+m+r} \ge p_i_j^{m}p_j_i^{n+r} \ge p_i_j^{m} p_j_j^{n}p_j_i^{r} = abp_i_j^{n}
+		\end{align}
+		Similarly,
+		\begin{align}
+			p_j_j^{n+m+r} \ge p_j_i^{r}p_i_i^{n}p_i_j^{m}=abp_i_i^{n}
+		\end{align}
+		
+	\end{frame}
+	\begin{frame}
+		
+		\begin{alertblock}{Result}
+			Thus the two series $\sum$ $p_i_i^{n}$ and $\sum$ $p_j_j^{n}$ converge or diverge together .But $\sum$ p_i_i^{n} = $\infty$ ,since $e_i$ is persistent and it follows now that $e_j$ is also persistent .This completes the proof.
+		\end{alertblock}
+	\end{frame}
+	
+\end{document}
