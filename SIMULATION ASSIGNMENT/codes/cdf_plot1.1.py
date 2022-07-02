@@ -30,7 +30,7 @@ plt.plot(x,err,'or')#plotting the empirical CDF
 
 
 
-plt.plot(x,err)#plotting the theoretical or analytical CDF
+
 
 
 
@@ -38,7 +38,8 @@ plt.plot(x,err)#plotting the theoretical or analytical CDF
 p1=np.zeros(50)
 p2=np.linspace(0,1,10)
 p3=np.ones(40)
-
+p=np.concatenate([p1,p2,p3])
+plt.plot(x,p)
 plt.grid() #creating the grid
 plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')
