@@ -22,8 +22,14 @@ for i in range(0,100):
 	err.append(err_n/simlen) #storing the probability values in a list
 
 
-
-
+def uni_cdf(x):
+	if x < 0: 
+	 return 0
+	if x > 1:
+	 return 1
+        if x>=0 and x<=1:
+         return x
+        
 
 plt.plot(x,err,'or')#plotting the empirical CDF
 
@@ -31,15 +37,12 @@ plt.plot(x,err,'or')#plotting the empirical CDF
 
 
 
+uni_cdfvec=scipy.vectorize(uni_cdf)
 
 
 
 
-p1=np.zeros(50)
-p2=np.linspace(0,1,10)
-p3=np.ones(40)
-p=np.concatenate([p1,p2,p3])
-plt.plot(x,p)
+plt.plot(x,uni_cdfvec(x))
 plt.grid() #creating the grid
 plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')
